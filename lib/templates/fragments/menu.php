@@ -23,13 +23,14 @@ function beans_primary_menu() {
 		'beans_primary_menu',
 		'nav',
 		array(
-			'class'      => 'tm-primary-menu uk-float-right uk-navbar',
+			'class'      => 'tm-primary-menu uk-float-rightuk-navbar-container',
 			'id'         => 'beans-primary-navigation',
 			'role'       => 'navigation',
 			'itemscope'  => 'itemscope',
 			'itemtype'   => 'https://schema.org/SiteNavigationElement',
 			'aria-label' => esc_attr__( 'Primary Navigation Menu', 'tm-beans' ),
 			'tabindex'   => '-1',
+            'uk-navbar'  => '',
 		)
 	);
 
