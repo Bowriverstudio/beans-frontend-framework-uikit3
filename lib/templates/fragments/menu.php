@@ -77,7 +77,7 @@ function beans_primary_menu_offcanvas_button() {
 		'a',
 		array(
 			'href'              => '#offcanvas_menu',
-			'class'             => 'uk-button uk-hidden-large',
+			'class'             => 'uk-button uk-hidden-large uk-button-default',
 			'data-uk-offcanvas' => '',
 		)
 	);
