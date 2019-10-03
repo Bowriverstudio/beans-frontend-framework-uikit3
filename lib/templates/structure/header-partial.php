@@ -11,7 +11,7 @@ beans_open_markup_e(
 	'beans_header',
 	'header',
 	array(
-		'class'     => 'tm-header uk-block',
+		'class'     => 'tm-header uk-section',
 		'role'      => 'banner',
 		'itemscope' => 'itemscope',
 		'itemtype'  => 'https://schema.org/WPHeader',

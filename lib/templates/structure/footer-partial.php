@@ -11,7 +11,7 @@ beans_open_markup_e(
 	'beans_footer',
 	'footer',
 	array(
-		'class'     => 'tm-footer uk-block',
+		'class'     => 'tm-footer uk-section',
 		'role'      => 'contentinfo',
 		'itemscope' => 'itemscope',
 		'itemtype'  => 'https://schema.org/WPFooter',
