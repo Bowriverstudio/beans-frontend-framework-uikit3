@@ -86,9 +86,10 @@ function beans_primary_menu_offcanvas_button() {
 			'beans_primary_menu_offcanvas_button_icon',
 			'span',
 			array(
-				'class'       => 'uk-icon-navicon uk-margin-small-right',
+				'class'       => 'uk-margin-small-right',
 				'aria-hidden' => 'true',
-			)
+                'uk-icon="icon:navicon"' => '',
+            )
 		);
 
 		beans_close_markup_e( 'beans_primary_menu_offcanvas_button_icon', 'span' );
