@@ -980,7 +980,7 @@ function beans_post_gallery( $output, $attr, $instance ) {
 		'div',
 		array(
 			'class'               => "uk-grid uk-grid-width-small-1-{$columns} gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}", // Attributes are automatically escaped.
-			'data-uk-grid-margin' => false,
+			'uk-grid' => false,
 		),
 		$id,
 		$columns

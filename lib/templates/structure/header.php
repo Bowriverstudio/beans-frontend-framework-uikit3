@@ -52,7 +52,7 @@ beans_open_markup_e( 'beans_html', 'html', str_replace( ' ', '&', str_replace( '
 						'div',
 						array(
 							'class'               => 'uk-grid',
-							'data-uk-grid-margin' => '',
+							'uk-grid' => '',
 						)
 					);
 

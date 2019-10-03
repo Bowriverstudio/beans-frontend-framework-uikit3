@@ -501,7 +501,7 @@ function beans_comment_before_fields() {
 			'div',
 			array(
 				'class'               => 'uk-grid uk-grid-small',
-				'data-uk-grid-margin' => '',
+				'uk-grid' => '',
 			)
 		);
 }

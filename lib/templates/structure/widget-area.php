@@ -18,7 +18,7 @@ echo beans_get_widget_area( 'before_widgets' ); // phpcs:ignore WordPress.Securi
 			'div',
 			array(
 				'class'               => 'uk-grid',
-				'data-uk-grid-margin' => '',
+				'uk-grid' => '',
 			)
 		);
 	}
