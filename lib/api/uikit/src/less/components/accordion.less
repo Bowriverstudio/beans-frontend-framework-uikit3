@@ -1,20 +1,12 @@
 // Name:            Accordion
-// Description:     Defines styles for the accordion
+// Description:     Component to create accordions
 //
 // Component:       `uk-accordion`
 //
 // Sub-objects:     `uk-accordion-title`
 //                  `uk-accordion-content`
 //
-// Markup:
-//
-// <!-- uk-accordion -->
-// <div class="uk-accordion" data-uk-accordion>
-//     <h3 class="uk-accordion-title"></h3>
-//     <div class="uk-accordion-content">
-//         <p></p>
-//     </div>
-// </div>
+// States:          `uk-open`
 //
 // ========================================================================
 
@@ -22,15 +14,14 @@
 // Variables
 // ========================================================================
 
-@accordion-title-margin-bottom:                 15px;
-@accordion-title-padding-vertical:              5px;
-@accordion-title-padding-horizontal:            15px;
-@accordion-title-font-size:                     18px;
-@accordion-title-line-height:                   24px;
-@accordion-title-background:                    #eee;
+@accordion-item-margin-top:                    @global-margin;
 
-@accordion-content-padding-horizontal:          @accordion-title-padding-horizontal;
-@accordion-content-padding-bottom:              @accordion-title-padding-horizontal;
+@accordion-title-font-size:                    @global-medium-font-size;
+@accordion-title-line-height:                  1.4;
+@accordion-title-color:                        @global-emphasis-color;
+@accordion-title-hover-color:                  @global-color;
+
+@accordion-content-margin-top:                 @global-margin;
 
 
 /* ========================================================================
@@ -38,43 +29,61 @@
  ========================================================================== */
 
 .uk-accordion {
+    padding: 0;
+    list-style: none;
     .hook-accordion;
 }
 
-/* Sub-object: `uk-accordion-title`
+
+/* Item
  ========================================================================== */
 
-.uk-accordion-title {
-    margin-top: 0;
-    margin-bottom: @accordion-title-margin-bottom;
-    padding: @accordion-title-padding-vertical @accordion-title-padding-horizontal;
-    background: @accordion-title-background;
-    font-size: @accordion-title-font-size;
-    line-height: @accordion-title-line-height;
-    cursor: pointer;
-    .hook-accordion-title;
+.uk-accordion > :nth-child(n+2) {
+    margin-top: @accordion-item-margin-top;
+    .hook-accordion-item;
 }
 
 
-/* Sub-object: `uk-accordion-content`
+/* Title
+ ========================================================================== */
+
+.uk-accordion-title {
+    display: block;
+    font-size: @accordion-title-font-size;
+    line-height: @accordion-title-line-height;
+    color: @accordion-title-color;
+    .hook-accordion-title;
+}
+
+/* Hover + Focus */
+.uk-accordion-title:hover,
+.uk-accordion-title:focus {
+    color: @accordion-title-hover-color;
+    text-decoration: none;
+    outline: none;
+    .hook-accordion-title-hover;
+}
+
+
+/* Content
  ========================================================================== */
 
 .uk-accordion-content {
-    padding: 0 @accordion-content-padding-horizontal @accordion-content-padding-bottom @accordion-content-padding-horizontal;
+    margin-top: @accordion-content-margin-top;
     .hook-accordion-content;
 }
 
 /*
- * Micro clearfix to make panels more robust
+ * Micro clearfix
  */
 
-.uk-accordion-content:before,
-.uk-accordion-content:after {
+.uk-accordion-content::before,
+.uk-accordion-content::after {
     content: "";
     display: table;
 }
 
-.uk-accordion-content:after { clear: both; }
+.uk-accordion-content::after { clear: both; }
 
 /*
  * Remove margin from the last-child
@@ -89,6 +98,38 @@
 .hook-accordion-misc;
 
 .hook-accordion() {}
+.hook-accordion-item() {}
 .hook-accordion-title() {}
+.hook-accordion-title-hover() {}
 .hook-accordion-content() {}
 .hook-accordion-misc() {}
+
+
+// Inverse
+// ========================================================================
+
+@inverse-accordion-title-color:             @inverse-global-emphasis-color;
+@inverse-accordion-title-hover-color:       @inverse-global-color;
+
+.hook-inverse() {
+
+    .uk-accordion > :nth-child(n+2) {
+        .hook-inverse-accordion-item;
+    }
+
+    .uk-accordion-title {
+        color: @inverse-accordion-title-color;
+        .hook-inverse-accordion-title;
+    }
+
+    .uk-accordion-title:hover,
+    .uk-accordion-title:focus {
+        color: @inverse-accordion-title-hover-color;
+        .hook-inverse-accordion-title-hover;
+    }
+
+}
+
+.hook-inverse-accordion-item() {}
+.hook-inverse-accordion-title() {}
+.hook-inverse-accordion-title-hover() {}

@@ -1,21 +1,15 @@
 // Name:            Sortable
-// Description:     Defines styles for sortable grids and lists
+// Description:     Component to create sortable grids and lists
 //
 // Component:       `uk-sortable`
 //
-// Sub-objects:     `uk-sortable-handle`
-//                  `uk-sortable-moving`
-//
-// Modifier:        `uk-sortable-dragged`
+// Sub-objects:     `uk-sortable-drag`
 //                  `uk-sortable-placeholder`
+//                  `uk-sortable-handle`
 //
-// Markup:
+// Modifiers:       `uk-sortable-empty`
 //
-// <!-- uk-sortable -->
-// <ul class="uk-sortable" data-uk-sortable>
-//     <li></li>
-//     <li></li>
-// </ul>
+// States:          `uk-drag`
 //
 // ========================================================================
 
@@ -23,11 +17,11 @@
 // Variables
 // ========================================================================
 
-@sortable-dragged-z-index:                      1050;
+@sortable-dragged-z-index:                      @global-z-index + 50;
 
 @sortable-placeholder-opacity:                  0;
 
-@sortable-empty-height:                         30px;
+@sortable-empty-height:                         50px;
 
 
 /* ========================================================================
@@ -40,18 +34,10 @@
 }
 
 /*
- * Deactivate browser touch actions in IE11
+ * Deactivate pointer-events on SVGs in Safari
  */
 
-.uk-sortable > * { touch-action: none; }
-
-/*
- * Disables the default callout shown when you touch and hold a touch target
- * Currently only works in Webkit
- */
-
-.uk-sortable a,
-.uk-sortable img { -webkit-touch-callout: none; }
+.uk-sortable svg { pointer-events: none; }
 
 /*
  * Remove margin from the last-child
@@ -60,27 +46,28 @@
 .uk-sortable > :last-child { margin-bottom: 0; }
 
 
-/* Sub-modifier `uk-sortable-dragged`
+/* Drag
  ========================================================================== */
 
-.uk-sortable-dragged {
-    position: absolute;
-    z-index: @sortable-dragged-z-index;
+.uk-sortable-drag {
+    position: absolute !important;
+    z-index: @sortable-dragged-z-index !important;
     pointer-events: none;
-    .hook-sortable-dragged;
+    .hook-sortable-drag;
 }
 
 
-/* Sub-modifier `uk-sortable-placeholder`
+/* Placeholder
  ========================================================================== */
 
 .uk-sortable-placeholder {
     opacity: @sortable-placeholder-opacity;
+    pointer-events: none;
     .hook-sortable-placeholder;
 }
 
 
-/* Empty List
+/* Empty modifier
  ========================================================================== */
 
 .uk-sortable-empty {
@@ -89,27 +76,12 @@
 }
 
 
-/* Sub-object `uk-sortable-handle`
+/* Handle
  ========================================================================== */
-
-/*
- * Deactivate browser touch actions in IE11
- */
-
-.uk-sortable-handle { touch-action: none; }
 
 /* Hover */
 .uk-sortable-handle:hover { cursor: move; }
 
-
-/* Sub-object `uk-sortable-moving`
- ========================================================================== */
-
-.uk-sortable-moving,
-/* Needed if moving over links or buttons */
-.uk-sortable-moving * { cursor: move; }
-/* Fixes dragging items over iframes */
-.uk-sortable-moving iframe { pointer-events: none; }
 
 
 // Hooks
@@ -118,7 +90,7 @@
 .hook-sortable-misc;
 
 .hook-sortable() {}
-.hook-sortable-dragged() {}
+.hook-sortable-drag() {}
 .hook-sortable-placeholder() {}
 .hook-sortable-empty() {}
 .hook-sortable-misc() {}
