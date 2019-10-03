@@ -59,7 +59,7 @@ class _Beans_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 			// Add UIkit navbar attributes.
 			$attr['class'][]     = 'uk-nav uk-nav-parent-icon uk-nav-dropdown';
-			$attr['data-uk-nav'] = '{multiple:true}';
+			$attr['uk-nav'] = '{multiple:true}';
 
 			// Open sub_menu wrap.
 			$output .= beans_open_markup( "beans_sub_menu_wrap[_{$type}]{$location_subfilter}", 'div', 'class=uk-dropdown uk-dropdown-navbar', $depth, $args );
