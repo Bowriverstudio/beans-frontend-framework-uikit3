@@ -12,7 +12,11 @@
  */
 namespace Beans_Frontend_Framework_UiKit3;
 
-add_action( 'admin_init', __NAMESPACE__.'\register_migration_options' );
+use function foo\func;
+
+if (function_exists('beans_register_options')){
+    add_action( 'admin_init', __NAMESPACE__.'\register_migration_options' );
+}
 /**
  * Displays the UiKit 3 Migration option in the dashboard -> themes -> settings.
  */
