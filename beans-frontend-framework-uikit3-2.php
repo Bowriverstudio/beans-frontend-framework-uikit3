@@ -122,35 +122,6 @@ function add_custom_css_framework(){
 
 }
 
-//add_action( 'wp_enqueue_scripts', __NAMESPACE__ .'\enqueue_all_uikit3' );
-
-
-function enqueue_all_uikit3(){
-
-    wp_enqueue_script(
-        'uikit3',
-        'https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js',
-        '',
-        '1'
-    );
-
-    wp_enqueue_script(
-        'uikit3_icons',
-        'https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js',
-        '',
-        '1'
-    );
-
-
-    wp_enqueue_style(
-        'uikit3_css',
-        'https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css',
-        '',
-        '1'
-
-    );
-
-}
 
 
 
