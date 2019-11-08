@@ -89,7 +89,7 @@ function beans_primary_menu_offcanvas_button() {
 			array(
 				'class'       => 'uk-margin-small-right',
 				'aria-hidden' => 'true',
-                'uk-icon="icon:navicon"' => '',
+                'uk-icon="menu"' => '',
             )
 		);
 
