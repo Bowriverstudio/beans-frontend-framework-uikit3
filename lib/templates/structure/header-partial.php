@@ -18,7 +18,7 @@ beans_open_markup_e(
 	)
 );
 
-	beans_open_markup_e( 'beans_fixed_wrap[_header]', 'div', 'class=uk-container uk-container-center' );
+	beans_open_markup_e( 'beans_fixed_wrap[_header]', 'div', 'class=uk-container' );
 
 		/**
 		 * Fires in the header.

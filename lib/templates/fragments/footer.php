@@ -18,7 +18,7 @@ beans_add_smart_action( 'beans_footer', 'beans_footer_content' );
 function beans_footer_content() {
 	beans_open_markup_e( 'beans_footer_credit', 'div', array( 'class' => 'uk-clearfix uk-text-small uk-text-muted' ) );
 
-		beans_open_markup_e( 'beans_footer_credit_left', 'span', array( 'class' => 'uk-align-medium-left uk-margin-small-bottom' ) );
+		beans_open_markup_e( 'beans_footer_credit_left', 'span', array( 'class' => 'uk-align-left@m uk-margin-small-bottom' ) );
 
 			beans_output_e(
 				'beans_footer_credit_text',
@@ -45,7 +45,7 @@ function beans_footer_content() {
 
 		$framework_link .= beans_close_markup( 'beans_footer_credit_framework_link', 'a' );
 
-		beans_open_markup_e( 'beans_footer_credit_right', 'span', array( 'class' => 'uk-align-medium-right uk-margin-bottom-remove' ) );
+		beans_open_markup_e( 'beans_footer_credit_right', 'span', array( 'class' => 'uk-align-right@m uk-margin-remove-bottom' ) );
 
 			beans_output_e(
 				'beans_footer_credit_right_text',

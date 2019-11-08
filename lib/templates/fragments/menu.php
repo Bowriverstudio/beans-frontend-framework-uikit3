@@ -17,20 +17,20 @@ beans_add_smart_action( 'beans_header', 'beans_primary_menu', 15 );
  * @return void
  */
 function beans_primary_menu() {
-	$nav_visibility = current_theme_supports( 'offcanvas-menu' ) ? 'uk-visible-large' : '';
+	$nav_visibility = current_theme_supports( 'offcanvas-menu' ) ? 'uk-visible-large-todo' : '';
 
 	beans_open_markup_e(
 		'beans_primary_menu',
 		'nav',
 		array(
-			'class'      => 'tm-primary-menu uk-float-rightuk-navbar-container',
+			'class'      => 'tm-primary-menu uk-navba-todor',
 			'id'         => 'beans-primary-navigation',
 			'role'       => 'navigation',
 			'itemscope'  => 'itemscope',
 			'itemtype'   => 'https://schema.org/SiteNavigationElement',
 			'aria-label' => esc_attr__( 'Primary Navigation Menu', 'tm-beans' ),
 			'tabindex'   => '-1',
-            'uk-navbar'  => '',
+            'uk-navbar-todo'  => '',
 		)
 	);
 
@@ -78,8 +78,8 @@ function beans_primary_menu_offcanvas_button() {
 		'a',
 		array(
 			'href'              => '#offcanvas_menu',
-			'class'             => 'uk-button uk-hidden-large uk-button-default',
-			'data-uk-offcanvas' => '',
+			'class'             => 'uk-button uk-hidden-large-todo uk-button-default',
+			'uk-toggle' => '',
 		)
 	);
 

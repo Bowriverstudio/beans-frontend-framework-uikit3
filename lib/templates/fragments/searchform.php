@@ -21,7 +21,7 @@ function beans_search_form() {
 		'beans_search_form',
 		'form',
 		array(
-			'class'  => 'uk-form uk-form-icon uk-form-icon-flip uk-width-1-1',
+			'class'  => 'uk-form-todo uk-form-icon-todo uk-form-icon-flip-todo uk-width-1-1',
 			'method' => 'get',
 			'action' => esc_url( home_url( '/' ) ),
 			'role'   => 'search',
@@ -44,7 +44,7 @@ function beans_search_form() {
 			'beans_search_form_input_icon',
 			'span',
 			array(
-				'class'       => 'uk-icon-search',
+				'class'       => 'uk-icon-search-todo',
 				'aria-hidden' => 'true',
 			)
 		);

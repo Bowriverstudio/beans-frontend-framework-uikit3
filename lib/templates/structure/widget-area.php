@@ -30,7 +30,8 @@ echo beans_get_widget_area( 'before_widgets' ); // phpcs:ignore WordPress.Securi
 			'div',
 			array(
 				'id'    => beans_get_widget_area( 'id' ), // Automatically escaped.
-				'class' => 'uk-offcanvas',
+				'class' => '',
+                'uk-offcanvas' => 'overlay:true'
 			)
 		);
 

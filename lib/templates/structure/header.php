@@ -32,7 +32,7 @@ beans_open_markup_e( 'beans_html', 'html', str_replace( ' ', '&', str_replace( '
 		'beans_body',
 		'body',
 		array(
-			'class'     => implode( ' ', get_body_class( 'uk-form no-js' ) ),
+			'class'     => implode( ' ', get_body_class( '' ) ),
 			'itemscope' => 'itemscope',
 			'itemtype'  => 'https://schema.org/WebPage',
 
@@ -45,7 +45,7 @@ beans_open_markup_e( 'beans_html', 'html', str_replace( ' ', '&', str_replace( '
 
 			beans_open_markup_e( 'beans_main', 'main', array( 'class' => 'tm-main uk-section' ) );
 
-				beans_open_markup_e( 'beans_fixed_wrap[_main]', 'div', 'class=uk-container uk-container-center' );
+				beans_open_markup_e( 'beans_fixed_wrap[_main]', 'div', 'class=uk-container' );
 
 					beans_open_markup_e(
 						'beans_main_grid',

@@ -30,32 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Hello, Hello, Hello, what\'s going on here then?' );
 }
 
-register_activation_hook( __FILE__, __NAMESPACE__ . '\deactivate_when_beans_not_activated_theme' );
-add_action( 'switch_theme', __NAMESPACE__ . '\deactivate_when_beans_not_activated_theme' );
-/**
- * If Beans is not the activated theme, deactivate this plugin and pop a die message when not switching themes.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function deactivate_when_beans_not_activated_theme() {
-   // @TODO ADD logic here
-	// If Beans is the active theme, bail out.
-//	$theme = wp_get_theme();
-//	if ( in_array( $theme->template, array( 'beans', 'tm-beans', 'Beans' ), true ) ) {
-//		return;
-//	}
-//
-//	deactivate_plugins( plugin_basename( __FILE__ ) );
-//
-//	if ( current_filter() !== 'switch_theme' ) {
-//		$message = __( 'Sorry, you can\'t activate this plugin unless the <a href="https://www.getbeans.io" target="_blank">Beans</a> framework is installed and a child theme is activated.', 'beans-visual-hook-guide' );
-//		wp_die( wp_kses_post( $message ) );
-//	}
-}
-
-add_action( 'beans_init', __NAMESPACE__.'\beans_includes_assests' );
+add_action( 'beans_init', __NAMESPACE__.'\beans_includes_assets' );
 /**
  * Include framework files.
  *
@@ -64,7 +39,7 @@ add_action( 'beans_init', __NAMESPACE__.'\beans_includes_assests' );
  *
  * @return void
  */
-function beans_includes_assests() {
+function beans_includes_assets() {
     $uikit_api_path = ABSPATH . 'wp-content/plugins/beans-uikit2/assets/';
     require_once plugin_dir_path(__FILE__) . 'assets/assets.php';
 }
@@ -98,6 +73,12 @@ function define_constants() {
 //
     // Used Internally within this plugin
     define( 'BEANS_CSSFRAMEWORK_PATH', plugin_dir_path(__FILE__) . 'lib/api/uikit/' );
+
+    define( 'BEANS_ASSETS_URL', BEANS_FRONTEND_FRAMEWORK_BASE_URL . 'assets/' );
+    define( 'BEANS_LESS_URL', BEANS_ASSETS_URL . 'less/' );
+    define( 'BEANS_JS_URL', BEANS_ASSETS_URL . 'js/' );
+    define( 'BEANS_IMAGE_URL', BEANS_ASSETS_URL . 'images/' );
+
 }
 
 
@@ -132,10 +113,44 @@ add_action('beans_after_load_api', __NAMESPACE__.'\add_custom_css_framework');
  * @return null
  */
 function add_custom_css_framework(){
+    if (is_admin() ){
+        require_once plugin_dir_path(__FILE__).'lib/admin/menu-uikit3.php';
+    }
     require_once plugin_dir_path(__FILE__).'lib/api/layout/functions.php';
-    require_once plugin_dir_path(__FILE__).'lib/api/uikit/class-beans-uikit.php';
-    require_once plugin_dir_path(__FILE__).'lib/api/uikit/functions.php';
+//    require_once plugin_dir_path(__FILE__).'lib/api/uikit/class-beans-uikit.php';
+//    require_once plugin_dir_path(__FILE__).'lib/api/uikit/functions.php';
 
 }
+
+//add_action( 'wp_enqueue_scripts', __NAMESPACE__ .'\enqueue_all_uikit3' );
+
+
+function enqueue_all_uikit3(){
+
+    wp_enqueue_script(
+        'uikit3',
+        'https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js',
+        '',
+        '1'
+    );
+
+    wp_enqueue_script(
+        'uikit3_icons',
+        'https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js',
+        '',
+        '1'
+    );
+
+
+    wp_enqueue_style(
+        'uikit3_css',
+        'https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css',
+        '',
+        '1'
+
+    );
+
+}
+
 
 

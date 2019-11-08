@@ -375,7 +375,7 @@ beans_add_smart_action( 'beans_after_open_comments', 'beans_comment_form' );
  * @return void
  */
 function beans_comment_form() {
-	$output = beans_open_markup( 'beans_comment_form_wrap', 'div', array( 'class' => 'uk-form tm-comment-form-wrap' ) );
+	$output = beans_open_markup( 'beans_comment_form_wrap', 'div', array( 'class' => 'tm-comment-form-wrap' ) );
 
 		$output .= beans_render_function( 'comment_form', array( 'title_reply' => beans_output( 'beans_comment_form_title_text', __( 'Add a Comment', 'tm-beans' ) ) ) );
 
@@ -494,7 +494,7 @@ beans_add_smart_action( 'comment_form_before_fields', 'beans_comment_before_fiel
  * @return void
  */
 function beans_comment_before_fields() {
-	beans_open_markup_e( 'beans_comment_fields_wrap', 'div', array( 'class' => 'uk-width-medium-1-1' ) );
+	beans_open_markup_e( 'beans_comment_fields_wrap', 'div', array( 'class' => 'uk-width-1-1@m' ) );
 
 		beans_open_markup_e(
 			'beans_comment_fields_inner_wrap',
