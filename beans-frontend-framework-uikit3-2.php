@@ -100,6 +100,13 @@ function beans_includes()
     require_once BEANS_RENDER_PATH . 'widget-area.php';
     require_once BEANS_RENDER_PATH . 'walker.php';
     require_once BEANS_RENDER_PATH . 'menu.php';
+
+    // Include customizer.
+    if ( is_customize_preview() ) {
+        require_once plugin_dir_path(__FILE__).'lib/admin/wp-customizer.php';
+    }
+
+
 }
 
 
@@ -117,6 +124,7 @@ function add_custom_css_framework(){
         require_once plugin_dir_path(__FILE__).'lib/admin/menu-uikit3.php';
     }
     require_once plugin_dir_path(__FILE__).'lib/api/layout/functions.php';
+    require_once plugin_dir_path(__FILE__).'lib/api/header-layout/functions.php';
 //    require_once plugin_dir_path(__FILE__).'lib/api/uikit/class-beans-uikit.php';
 //    require_once plugin_dir_path(__FILE__).'lib/api/uikit/functions.php';
 

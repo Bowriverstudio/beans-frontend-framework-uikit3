@@ -7,7 +7,45 @@
  * @since   1.0.0
  */
 
-beans_add_smart_action( 'beans_header', 'beans_primary_menu', 15 );
+beans_add_smart_action( 'beans_header', 'test_menu', 15 );
+
+function test_menu(){
+?>
+<!--    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">-->
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+    </div>
+        <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#">
+                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                    Features
+                </a>
+            </li>
+        </ul>
+
+        <div class="uk-navbar-item">
+            <div>Some <a href="#">Link</a></div>
+        </div>
+
+        <div class="uk-navbar-item">
+            <form action="javascript:void(0)">
+                <input class="uk-input uk-form-width-small" type="text" placeholder="Input">
+                <button class="uk-button uk-button-default">Button</button>
+            </form>
+        </div>
+
+    </div>
+</nav>
+<!--    </div>-->
+<?php
+}
+
+//beans_add_smart_action( 'beans_header', 'beans_primary_menu', 15 );
 /**
  * Echo primary menu.
  *
@@ -78,7 +116,7 @@ function beans_primary_menu_offcanvas_button() {
 		'a',
 		array(
 			'href'              => '#offcanvas_menu',
-			'class'             => 'uk-button uk-hidden-large-todo uk-button-default',
+			'class'             => 'uk-button uk-button-default uk-hidden@l',
 			'uk-toggle' => '',
 		)
 	);

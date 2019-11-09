@@ -91,7 +91,7 @@ function beans_header_image() {
 	<?php
 }
 
-beans_add_smart_action( 'beans_header', 'beans_site_branding' );
+//beans_add_smart_action( 'beans_header', 'beans_site_branding' );
 /**
  * Echo header site branding.
  *
@@ -117,7 +117,6 @@ function beans_site_branding() {
 				'itemprop' => 'headline',
 			)
 		);
-
 			$logo = get_theme_mod( 'beans_logo_image', false );
 
 			// phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact -- Code structure mimics HTML markup.

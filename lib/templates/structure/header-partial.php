@@ -18,7 +18,13 @@ beans_open_markup_e(
 	)
 );
 
-	beans_open_markup_e( 'beans_fixed_wrap[_header]', 'div', 'class=uk-container' );
+	beans_open_markup_e(
+	    'beans_fixed_wrap[_header]',
+        'div',
+        array(
+            'class' => 'uk-container ' . beans_get_header_max_width(),
+//            'uk-sticky' => "sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky"
+        ));
 
 		/**
 		 * Fires in the header.
