@@ -51,18 +51,21 @@ class _Beans_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		// Add UIkit sidenav and offcanvas class.
 		if ( $depth > 0 || in_array( $type, array( 'sidenav', 'offcanvas' ), true ) ) {
-			$attr['class'][] = 'uk-nav-sub';
+			$attr['class'][] = 'uk-nav uk-navbar-dropdown-navs uk-nav-sub';
 		}
+
 
 		// Add UIkit navbar stuff.
 		if ( 'navbar' === $type && $args->beans_start_level === $depth ) {
-
 			// Add UIkit navbar attributes.
-			$attr['class'][]     = 'uk-nav uk-nav-parent-icon uk-nav-dropdown';
-			$attr['uk-nav'] = '{multiple:true}';
+//			$attr['class'][]     = 'uk-nav uk-nav-parent-icon uk-nav-dropdown';
+			$attr['class'][]     = 'uk-nav-sub uk-navbar-dropdown-nav';
 
 			// Open sub_menu wrap.
-			$output .= beans_open_markup( "beans_sub_menu_wrap[_{$type}]{$location_subfilter}", 'div', 'class=uk-dropdown uk-navbar-dropdown', $depth, $args );
+			$output .= beans_open_markup( "beans_sub_menu_wrap[_{$type}]{$location_subfilter}",
+                'div', array('class' => 'uk-navbar-dropdown' ),
+                $depth,
+                $args );
 		}
 
 		// Implode to avoid empty spaces.
@@ -175,7 +178,7 @@ class _Beans_Walker_Nav_Menu extends Walker_Nav_Menu {
 			$item_attr['class'][] = 'uk-parent';
 
 			if ( beans_get( 'beans_type', $args ) === 'navbar' ) {
-				$item_attr['data-uk-dropdown'] = '';
+				$item_attr['data-uk-dropdownaaa'] = '';
 				$child_indicator               = true;
 			}
 		}
@@ -197,7 +200,7 @@ class _Beans_Walker_Nav_Menu extends Walker_Nav_Menu {
 					$item_output .= beans_output( "beans_menu_item_text[_{$item_id}]", $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Used inside method scope.
 
 		if ( isset( $child_indicator ) ) {
-			$item_output .= beans_open_markup( "beans_menu_item_child_indicator[_{$item_id}]", 'i', array( 'class' => 'uk-icon-caret-down uk-margin-small-left' ), $item, $depth, $args );
+			$item_output .= beans_open_markup( "beans_menu_item_child_indicator[_{$item_id}]", 'i', array( 'class' => '', 'uk-icon' => 'icon:triangle-down' ), $item, $depth, $args );
 			$item_output .= beans_close_markup( "beans_menu_item_child_indicator[_{$item_id}]", 'i', $item, $depth, $args );
 		}
 
