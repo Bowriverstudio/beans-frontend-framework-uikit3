@@ -25,3 +25,5 @@ function beans_get_header_max_width( ) {
     return apply_filters( "beans_header_max_width", get_theme_mod('beans_header_max_width', beans_get_customizer_default_value('beans_header_max_width') ));
 }
 
+
+
