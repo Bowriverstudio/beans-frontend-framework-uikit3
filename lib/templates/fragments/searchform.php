@@ -44,8 +44,8 @@ function beans_search_form() {
 			'beans_search_form_input_icon',
 			'span',
 			array(
-				'class'       => 'uk-icon-search-todo',
 				'aria-hidden' => 'true',
+                'uk-icon'     => 'icon:search'
 			)
 		);
 
