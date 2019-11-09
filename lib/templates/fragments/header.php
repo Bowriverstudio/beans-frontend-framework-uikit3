@@ -91,7 +91,7 @@ function beans_header_image() {
 	<?php
 }
 
-//beans_add_smart_action( 'beans_header', 'beans_site_branding' );
+beans_add_smart_action( 'beans_header', 'beans_site_branding' );
 /**
  * Echo header site branding.
  *

@@ -39,7 +39,8 @@ echo beans_get_widget_area( 'before_widgets' ); // phpcs:ignore WordPress.Securi
 	}
 
 		// Widgets.
-		if ( beans_have_widgets() ) :
+// TODO REMOVE ! - there as a temp hack.
+		if ( ! beans_have_widgets() ) :
 
 			/**
 			 * Fires before widgets loop.

@@ -23,7 +23,7 @@ function uikit3_beans_do_register_wp_customize_options()
             'id' => 'beans_header_max_width',
             'label' => __('Max Width', 'tm-beans'),
             'type' => 'select',
-            'default' =>'',
+            'default' => beans_get_customizer_default_value('beans_header_max_width'),
             'options' => array(
                 '' => __('None', 'tm-beans'),
                 'uk-container-xsmall' => __('xsmall container', 'tm-beans'),

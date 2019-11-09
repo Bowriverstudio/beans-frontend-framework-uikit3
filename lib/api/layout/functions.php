@@ -86,7 +86,7 @@ function _beans_get_layout_classes( array $args ) {
     $c      = $grid; // $c stands for "content".
     $sp     = beans_get( 'sidebar_primary', $args );
     $ss     = beans_get( 'sidebar_secondary', $args );
-    $prefix = 'uk-width-';
+    $prefix = 'todo-uk-width-';
     $suffix = '@' . beans_get( 'breakpoint', $args, 'medium' );
 
     $classes = array(

@@ -11,36 +11,41 @@ beans_add_smart_action( 'beans_header', 'test_menu', 15 );
 
 function test_menu(){
 ?>
-<!--    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">-->
-<nav class="uk-navbar-container uk-margin" uk-navbar>
-    <div class="uk-navbar-left">
-
-        <a class="uk-navbar-item uk-logo" href="#">Logo</a>
-    </div>
+    <nav class="uk-navbar-container uk-margin uk-navbar" uk-navbar="">
         <div class="uk-navbar-right">
 
-        <ul class="uk-navbar-nav">
-            <li>
-                <a href="#">
-                    <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-                    Features
-                </a>
-            </li>
-        </ul>
+            <ul class="uk-navbar-nav uk-navbar-nav-primary">
+                <li class="uk-active"><a href="#">Active</a></li>
+                <li>
+                    <a href="#" aria-expanded="false" class="">Parent</a>
+                    <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left uk-animation-fade uk-animation-enter" style="left: 72.3125px; top: 80px; animation-duration: 200ms;">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li class="uk-parent">
+                                <a href="#">Parent</a>
+                                <ul class="uk-nav-sub">
+                                    <li><a href="#">Sub item</a></li>
+                                    <li><a href="#">Sub item</a></li>
+                                </ul>
+                            </li>
+                            <li class="uk-nav-header">Header</li>
+                            <li><a href="#"><span class="uk-margin-small-right uk-icon" uk-icon="icon: table"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="table"><rect x="1" y="3" width="18" height="1"></rect><rect x="1" y="7" width="18" height="1"></rect><rect x="1" y="11" width="18" height="1"></rect><rect x="1" y="15" width="18" height="1"></rect></svg></span> Item</a></li>
+                            <li><a href="#"><span class="uk-margin-small-right uk-icon" uk-icon="icon: thumbnails"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="thumbnails"><rect fill="none" stroke="#000" x="3.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="3.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="11.5" y="11.5" width="5" height="5"></rect><rect fill="none" stroke="#000" x="3.5" y="11.5" width="5" height="5"></rect></svg></span> Item</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#"><span class="uk-margin-small-right uk-icon" uk-icon="icon: trash"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="trash"><polyline fill="none" stroke="#000" points="6.5 3 6.5 1.5 13.5 1.5 13.5 3"></polyline><polyline fill="none" stroke="#000" points="4.5 4 4.5 18.5 15.5 18.5 15.5 4"></polyline><rect x="8" y="7" width="1" height="9"></rect><rect x="11" y="7" width="1" height="9"></rect><rect x="2" y="3" width="16" height="1"></rect></svg></span> Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" aria-expanded="false" class="">Content</a>
+                    <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left uk-animation-fade uk-animation-enter" style="left: 146.781px; top: 80px; animation-duration: 200ms;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+            </ul>
 
-        <div class="uk-navbar-item">
-            <div>Some <a href="#">Link</a></div>
         </div>
-
-        <div class="uk-navbar-item">
-            <form action="javascript:void(0)">
-                <input class="uk-input uk-form-width-small" type="text" placeholder="Input">
-                <button class="uk-button uk-button-default">Button</button>
-            </form>
-        </div>
-
-    </div>
-</nav>
+    </nav>
 <!--    </div>-->
 <?php
 }
@@ -61,14 +66,14 @@ function beans_primary_menu() {
 		'beans_primary_menu',
 		'nav',
 		array(
-			'class'      => 'tm-primary-menu uk-navba-todor',
+			'class'      => 'tm-primary-menu uk-navbar-right uk-navba-todor',
 			'id'         => 'beans-primary-navigation',
 			'role'       => 'navigation',
 			'itemscope'  => 'itemscope',
 			'itemtype'   => 'https://schema.org/SiteNavigationElement',
 			'aria-label' => esc_attr__( 'Primary Navigation Menu', 'tm-beans' ),
 			'tabindex'   => '-1',
-            'uk-navbar-todo'  => '',
+            'uk-navbar-todo '  => '',
 		)
 	);
 
@@ -97,7 +102,7 @@ function beans_primary_menu() {
 	beans_close_markup_e( 'beans_primary_menu', 'nav' );
 }
 
-beans_add_smart_action( 'beans_primary_menu_append_markup', 'beans_primary_menu_offcanvas_button', 5 );
+//beans_add_smart_action( 'beans_primary_menu_append_markup', 'beans_primary_menu_offcanvas_button', 5 );
 /**
  * Echo primary menu offcanvas button.
  *

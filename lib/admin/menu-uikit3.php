@@ -69,7 +69,7 @@ final class _Beans_Admin_Menu_Uikit3 {
                 'id'             => 'beans_migration_mode',
                 'checkbox_label' => __( 'Select to include scripts.', 'tm-beans' ),
                 'type'           => 'checkbox',
-                'description'    => __( 'This option should be enabled while the migration is occurring only. See <a href="https://getuikit.com/docs/migration">Migration</a> for more details.', 'tm-beans' ),
+                'description'    => __( 'This option should be enabled while the migration is occurring only. See <a href="https://getuikit.com/docs/migration">Migration</a> for more details.  <p>Note: Warnings found in component navbar can be ignored.</p>', 'tm-beans' ),
             ),
         );
 

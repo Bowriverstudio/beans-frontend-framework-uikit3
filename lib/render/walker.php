@@ -62,7 +62,7 @@ class _Beans_Walker_Nav_Menu extends Walker_Nav_Menu {
 			$attr['uk-nav'] = '{multiple:true}';
 
 			// Open sub_menu wrap.
-			$output .= beans_open_markup( "beans_sub_menu_wrap[_{$type}]{$location_subfilter}", 'div', 'class=uk-dropdown uk-dropdown-navbar', $depth, $args );
+			$output .= beans_open_markup( "beans_sub_menu_wrap[_{$type}]{$location_subfilter}", 'div', 'class=uk-dropdown uk-navbar-dropdown', $depth, $args );
 		}
 
 		// Implode to avoid empty spaces.
