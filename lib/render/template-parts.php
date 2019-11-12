@@ -100,6 +100,7 @@ function beans_loop_template( $id = false ) {
 	}
 }
 
+
 beans_add_smart_action( 'beans_post_after_markup', 'beans_comments_template', 15 );
 /**
  * Echo comments template part.
@@ -161,9 +162,12 @@ function beans_widget_area_template() {
 	require BEANS_STRUCTURE_PATH . 'widget-area.php';
 }
 
-beans_add_smart_action( 'beans_primary_after_markup', 'beans_sidebar_primary_template' );
+
+beans_add_smart_action( 'init', 'beans_set_sidebar_layout_callbacks' , 5);
 /**
  * Echo primary sidebar template part.
+ *
+ * Call by beans_set_sidebar_layout_callbacks
  *
  * The primary sidebar template part only loads if the layout set includes it. This prevents unnecessary memory usage.
  *
@@ -180,9 +184,10 @@ function beans_sidebar_primary_template() {
 	get_sidebar( 'primary' );
 }
 
-beans_add_smart_action( 'beans_primary_after_markup', 'beans_sidebar_secondary_template' );
 /**
  * Echo secondary sidebar template part.
+ *
+ * Call by beans_set_sidebar_layout_callbacks
  *
  * The secondary sidebar template part only loads if the layout set includes it. This prevents unnecessary memory usage.
  *

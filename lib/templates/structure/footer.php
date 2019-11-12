@@ -9,7 +9,7 @@
  * @since   1.0.0
  */
 
-						beans_close_markup_e( 'beans_primary', 'div' );
+beans_close_markup_e( 'beans_primary', 'div' );
 
 					beans_close_markup_e( 'beans_main_grid', 'div' );
 

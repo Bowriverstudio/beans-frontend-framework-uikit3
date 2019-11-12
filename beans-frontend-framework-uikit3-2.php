@@ -125,6 +125,7 @@ function add_custom_css_framework(){
     }
     require_once plugin_dir_path(__FILE__).'lib/api/layout/functions.php';
     require_once plugin_dir_path(__FILE__).'lib/api/header-layout/functions.php';
+    require_once plugin_dir_path(__FILE__).'lib/api/utilities/functions.php';
 //    require_once plugin_dir_path(__FILE__).'lib/api/uikit/class-beans-uikit.php';
 //    require_once plugin_dir_path(__FILE__).'lib/api/uikit/functions.php';
 
