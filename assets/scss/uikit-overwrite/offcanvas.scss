@@ -1,0 +1,13 @@
+$offcanvas-bar-background:#333;
+$offcanvas-bar-width-m:0px;
+$offcanvas-bar-padding-horizontal:0px;
+
+.uk-offcanvas-bar{
+  li {
+    padding: 10px 15px;
+  }
+
+  .uk-active{
+    background:#1a1a1a;
+  }
+}
