@@ -27,6 +27,16 @@ function uikit3_beans_do_register_wp_customize_options()
             'options' => _uikit3_get_container_options(),
             'description' => 'Add one of the following classes to the container to apply a different max-width.'
         ),
+
+        array(
+            'id' => 'beans_primary_menu_breakpoint',
+            'label' => __('Menu Break Point', 'tm-beans'),
+            'type' => 'select',
+            'default' => beans_get_customizer_default_value('beans_primary_menu_breakpoint'),
+            'options' => _uikit3_get_breakpoint_options(),
+            'description' => 'Add one of the following classes to the container to apply a different max-width.'
+        ),
+
     );
 
     beans_register_wp_customize_options(
@@ -37,6 +47,8 @@ function uikit3_beans_do_register_wp_customize_options()
             'priority' => 1000,
         )
     );
+
+
 
 
 
@@ -74,3 +86,13 @@ function _uikit3_get_container_options(){
         'uk-container-expand' => __('Unlimited with dynamic horizontal padding', 'tm-beans'),
     );
 }
+
+function _uikit3_get_breakpoint_options(){
+    return array(
+        's' => __('Small', 'tm-beans'),
+        'm' => __('Medium', 'tm-beans'),
+        'l' => __('Large', 'tm-beans'),
+        'xl' => __('Extra Large', 'tm-beans'),
+    );
+}
+

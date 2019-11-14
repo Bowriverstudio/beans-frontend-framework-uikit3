@@ -17,7 +17,8 @@ beans_add_smart_action( 'beans_header', 'beans_primary_menu', 15 );
  * @return void
  */
 function beans_primary_menu() {
-	$nav_visibility = current_theme_supports( 'offcanvas-menu' ) ? 'uk-visible-large-todo' : '';
+    $breakpoint = get_theme_mod('beans_primary_menu_breakpoint', beans_get_customizer_default_value('beans_primary_menu_breakpoint'));
+	$nav_visibility = current_theme_supports( 'offcanvas-menu' ) ? 'uk-visible@'.$breakpoint : '';
 
 	beans_open_markup_e(
 		'beans_primary_menu',
@@ -59,7 +60,7 @@ function beans_primary_menu() {
 	beans_close_markup_e( 'beans_primary_menu', 'nav' );
 }
 
-//beans_add_smart_action( 'beans_primary_menu_append_markup', 'beans_primary_menu_offcanvas_button', 5 );
+beans_add_smart_action( 'beans_primary_menu_append_markup', 'beans_primary_menu_offcanvas_button', 5 );
 /**
  * Echo primary menu offcanvas button.
  *
@@ -69,16 +70,18 @@ function beans_primary_menu() {
  */
 function beans_primary_menu_offcanvas_button() {
 
+
 	if ( ! current_theme_supports( 'offcanvas-menu' ) ) {
 		return;
 	}
+    $breakpoint = get_theme_mod('beans_primary_menu_breakpoint', beans_get_customizer_default_value('beans_primary_menu_breakpoint'));
 
 	beans_open_markup_e(
 		'beans_primary_menu_offcanvas_button',
 		'a',
 		array(
 			'href'              => '#offcanvas_menu',
-			'class'             => 'uk-button uk-button-default uk-hidden@l',
+			'class'             => 'uk-button uk-button-default uk-hidden@'.$breakpoint,
 			'uk-toggle' => '',
 		)
 	);
