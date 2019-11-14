@@ -62,6 +62,10 @@ add_action( 'plugin_loaded', __NAMESPACE__.'\define_constants');
  */
 function define_constants() {
 
+    if (defined('BEANS_FRONTEND_FRAMEWORK')) {
+        return;
+    }
+
     // Required to ensure a frontend framework is loaded.
     define( 'BEANS_FRONTEND_FRAMEWORK', 'uikit3' );
     define( 'BEANS_FRONTEND_FRAMEWORK_BASE_URL', plugin_dir_url(__FILE__) );
@@ -95,11 +99,13 @@ add_action( 'beans_init', __NAMESPACE__.'\beans_includes' );
 function beans_includes()
 {
 // Include renderers.
-    require_once BEANS_RENDER_PATH . 'template-parts.php';
-    require_once BEANS_RENDER_PATH . 'fragments.php';
-    require_once BEANS_RENDER_PATH . 'widget-area.php';
-    require_once BEANS_RENDER_PATH . 'walker.php';
-    require_once BEANS_RENDER_PATH . 'menu.php';
+        require_once BEANS_RENDER_PATH . 'template-parts.php';
+        require_once BEANS_RENDER_PATH . 'fragments.php';
+        require_once BEANS_RENDER_PATH . 'widget-area.php';
+        require_once BEANS_RENDER_PATH . 'walker.php';
+        require_once BEANS_RENDER_PATH . 'menu.php';
+
+
 
     // Include customizer.
     if ( is_customize_preview() ) {

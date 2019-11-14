@@ -143,7 +143,6 @@ function _beans_get_layout_classes(array $args)
  */
 function beans_set_sidebar_layout_callbacks()
 {
-
     $layout = beans_get_layout();
     switch ($layout) {
 
