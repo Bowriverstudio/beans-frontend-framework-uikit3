@@ -33,7 +33,7 @@ do_action( 'beans_before_loop' );
 			// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound -- Variable called in a function scope.
 			$article_attributes = array(
 				'id'        => get_the_ID(), // Automatically escaped.
-				'class'     => implode( ' ', get_post_class( array( 'uk-article', ( current_theme_supports( 'beans-default-styling' ) ? 'uk-panel-box' : null ) ) ) ), // Automatically escaped.
+				'class'     => implode( ' ', get_post_class( array( 'uk-article ', ( current_theme_supports( 'beans-default-styling' ) ? 'uk-card uk-card-default uk-card-body' : null ) ) ) ), // Automatically escaped.
 				'itemscope' => 'itemscope',
 				'itemtype'  => 'https://schema.org/CreativeWork',
 			);
