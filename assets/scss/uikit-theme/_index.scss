@@ -4,3 +4,41 @@
 .uk-grid-divider{
   margin-left:0px;
 }
+
+
+
+.uk-progress {
+  //&::-webkit-progress-bar { background-color: grey; }
+  //&::-moz-progress-bar { background-color: grey; }
+}
+
+
+.uk-progress-success { // created class for customisation
+  &::-webkit-progress-value { background-color: $global-success-background } // those are the overflowing colors
+  &::-ms-fill { background-color: $global-success-background }
+}
+
+
+.uk-progress-warning { // created class for customisation
+  &::-webkit-progress-value { background-color: $global-warning-background } // those are the overflowing colors
+  &::-ms-fill { background-color: $global-warning-background }
+}
+
+
+
+.uk-progress-danger { // created class for customisation
+  &::-webkit-progress-value { background-color: $global-danger-background } // those are the overflowing colors
+  &::-ms-fill { background-color: $global-danger-background }
+}
+
+
+.uk-input{
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
