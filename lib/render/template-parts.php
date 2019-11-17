@@ -163,7 +163,7 @@ function beans_widget_area_template() {
 }
 
 
-beans_add_smart_action( 'init', 'beans_set_sidebar_layout_callbacks' , 5);
+beans_add_smart_action( 'beans_primary_before_markup', 'beans_set_sidebar_layout_callbacks' , 3);
 /**
  * Echo primary sidebar template part.
  *
