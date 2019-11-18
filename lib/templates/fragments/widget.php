@@ -43,7 +43,7 @@ function beans_widget_title() {
 		return;
 	}
 
-	beans_open_markup_e( 'beans_widget_title' . _beans_widget_subfilters(), 'h3', 'class=uk-panel-title-todo' );
+	beans_open_markup_e( 'beans_widget_title' . _beans_widget_subfilters(), 'h3', array('class'=> 'uk-card-title') );
 
 		beans_output_e( 'beans_widget_title_text', $title );
 

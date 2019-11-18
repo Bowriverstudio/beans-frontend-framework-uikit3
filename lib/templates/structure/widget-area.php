@@ -57,7 +57,7 @@ echo beans_get_widget_area( 'before_widgets' ); // phpcs:ignore WordPress.Securi
 						beans_open_markup_e( 'beans_widget_grid' . _beans_widget_subfilters(), 'div', beans_widget_shortcodes( 'class=uk-width-medium-1-{count}' ) );
 					}
 
-						beans_open_markup_e( 'beans_widget_panel' . _beans_widget_subfilters(), 'div', beans_widget_shortcodes( 'class=tm-widget uk-panel widget_{type} {id}' ) );
+						beans_open_markup_e( 'beans_widget_panel' . _beans_widget_subfilters(), 'div', beans_widget_shortcodes( 'class=tm-widget uk-card uk-card-body uk-card-small widget_{type} {id}' ) );
 
 							/**
 							 * Fires in each widget panel structural HTML.
