@@ -41,13 +41,18 @@ beans_add_smart_action( 'beans_post_meta_author', 'beans_post_meta_author_shortc
  * @return void
  */
 function beans_post_meta_author_shortcode() {
+
+    $author_id = get_the_author_meta( 'ID' );
+    if ( !$author_id ) {
+        return;
+    }
 	beans_output_e( 'beans_post_meta_author_prefix', esc_html__( 'By ', 'tm-beans' ) );
 
 	beans_open_markup_e(
 		'beans_post_meta_author',
 		'a',
 		array(
-			'href'      => get_author_posts_url( get_the_author_meta( 'ID' ) ), // Automatically escaped.
+			'href'      => get_author_posts_url( $author_id ), // Automatically escaped.
 			'rel'       => 'author',
 			'itemprop'  => 'author',
 			'itemscope' => '',
