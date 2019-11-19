@@ -16,7 +16,7 @@ beans_add_smart_action( 'beans_post_meta_date', 'beans_post_meta_date_shortcode'
  * @return void
  */
 function beans_post_meta_date_shortcode() {
-	beans_output_e( 'beans_post_meta_date_prefix', esc_html__( 'Posted on ', 'tm-beans' ) );
+	beans_output_e( 'beans_post_meta_date_prefix', __( 'Published:&nbsp;', 'tm-beans' ) );
 
 	beans_open_markup_e(
 		'beans_post_meta_date',

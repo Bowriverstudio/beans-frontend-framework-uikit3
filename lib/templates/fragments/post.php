@@ -119,7 +119,7 @@ function beans_post_meta() {
 		return;
 	}
 
-	beans_open_markup_e( 'beans_post_meta', 'ul', array( 'class' => 'uk-article-meta uk-subnav uk-subnav-line' ) );
+	beans_open_markup_e( 'beans_post_meta', 'ul', array( 'class' => 'uk-article-meta uk-subnav uk-subnav-divider' ) );
 
 		/**
 		 * Filter the post meta actions and order.
