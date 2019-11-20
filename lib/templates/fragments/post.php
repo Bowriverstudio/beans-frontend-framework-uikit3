@@ -304,9 +304,15 @@ function beans_post_content() {
 		)
 	);
 
-		the_content();
+    // Return the excerpt if it exists and is not singular, and .
+    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+        echo '<p>' . get_the_excerpt() . '</p><p>' . beans_post_more_link() . '</p>';
+    } else {
+        the_content();
+    }
 
-	if ( is_singular() && 'open' === get_option( 'default_ping_status' ) && post_type_supports( $post->post_type, 'trackbacks' ) ) {
+
+    if ( is_singular() && 'open' === get_option( 'default_ping_status' ) && post_type_supports( $post->post_type, 'trackbacks' ) ) {
 		echo '<!--';
 		trackback_rdf();
 		echo '-->' . "\n";
