@@ -342,8 +342,9 @@ function beans_post_more_link() {
 			'beans_next_icon[_more_link]',
 			'span',
 			array(
-				'class'       => 'uk-icon-angle-double-right uk-margin-small-left',
+				'class'       => '',
 				'aria-hidden' => 'true',
+                'uk-icon'     => 'icon: chevron-double-right'
 			)
 		);
 		$output .= beans_close_markup( 'beans_next_icon[_more_link]', 'span' );
@@ -445,9 +446,11 @@ function beans_previous_post_link( $output, $format, $link, $post ) {
 			'beans_previous_icon[_post_navigation]',
 			'span',
 			array(
-				'class'       => 'uk-icon-angle-double-left uk-margin-small-right',
+				'class'       => '',
 				'aria-hidden' => 'true',
-			)
+                'uk-icon'     => 'icon: chevron-double-left'
+
+            )
 		);
 
 		$output .= beans_close_markup( 'beans_previous_icon[_post_navigation]', 'span' );
@@ -493,8 +496,9 @@ function beans_next_post_link( $output, $format, $link, $post ) {
 			'beans_next_icon[_post_navigation]',
 			'span',
 			array(
-				'class'       => 'uk-icon-angle-double-right uk-margin-small-left',
+				'class'       => '',
 				'aria-hidden' => 'true',
+                'uk-icon'     => 'icon: chevron-double-right'
 			)
 		);
 
@@ -558,7 +562,7 @@ function beans_post_navigation() {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Echoes HTML output.
 				echo get_previous_post_link(
 					'%link',
-					beans_output( 'beans_previous_text[_post_navigation_item]', __( 'Previous Page', 'tm-beans' ) )
+					beans_output( 'beans_previous_text[_post_navigation_item]', __( 'Previous', 'tm-beans' ) )
 				);
 
 			beans_close_markup_e( 'beans_post_navigation_item[_previous]', 'li' );
@@ -570,7 +574,7 @@ function beans_post_navigation() {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Echoes HTML output.
 				echo get_next_post_link(
 					'%link',
-					beans_output( 'beans_next_text[_post_navigation_item]', __( 'Next Page', 'tm-beans' ) )
+					beans_output( 'beans_next_text[_post_navigation_item]', __( 'Page', 'tm-beans' ) )
 				);
 
 			beans_close_markup_e( 'beans_post_navigation_item[_next]', 'li' );
@@ -624,7 +628,7 @@ function beans_posts_pagination() {
 			'beans_posts_pagination',
 			'ul',
 			array(
-				'class' => 'uk-pagination uk-grid-margin',
+				'class' => 'uk-pagination uk-flex-center',
 			)
 		);
 
@@ -637,6 +641,7 @@ function beans_posts_pagination() {
 					'a',
 					array(
 						'href' => previous_posts( false ), // Attributes are automatically escaped.
+                        'class' => ''
 					),
 					$current
 				);
@@ -645,14 +650,15 @@ function beans_posts_pagination() {
 						'beans_previous_icon[_posts_pagination]',
 						'span',
 						array(
-							'class'       => 'uk-icon-angle-double-left uk-margin-small-right',
+							'class'       => '',
 							'aria-hidden' => 'true',
+                            'uk-icon'     => 'icon: chevron-double-left'
 						)
 					);
 
 					beans_close_markup_e( 'beans_previous_icon[_posts_pagination]', 'span' );
 
-					beans_output_e( 'beans_previous_text[_posts_pagination]', esc_html__( 'Previous Page', 'tm-beans' ) );
+					beans_output_e( 'beans_previous_text[_posts_pagination]', esc_html__( 'Previous', 'tm-beans' ) );
 
 				beans_close_markup_e( 'beans_previous_link[_posts_pagination]', 'a' );
 
@@ -716,7 +722,8 @@ function beans_posts_pagination() {
 						'a',
 						array(
 							'href' => get_pagenum_link( $link ), // Attributes are automatically escaped.
-						),
+                            'class' => '',
+                        ),
 						$link
 					);
 
@@ -741,15 +748,16 @@ function beans_posts_pagination() {
 					$current
 				);
 
-					beans_output_e( 'beans_next_text[_posts_pagination]', esc_html__( 'Next Page', 'tm-beans' ) );
+					beans_output_e( 'beans_next_text[_posts_pagination]', esc_html__( 'Next', 'tm-beans' ) );
 
 					beans_open_markup_e(
 						'beans_next_icon[_posts_pagination]',
 						'span',
 						array(
-							'class'       => 'uk-icon-angle-double-right uk-margin-small-left',
+							'class'       => '',
 							'aria-hidden' => 'true',
-						)
+                            'uk-icon'     => 'icon: chevron-double-right'
+                        )
 					);
 
 					beans_close_markup_e( 'beans_next_icon[_posts_pagination]', 'span' );

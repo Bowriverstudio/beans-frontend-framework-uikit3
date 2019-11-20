@@ -1,35 +1,41 @@
 // Variables modifiers
 // ========================================================================
 
-$pagination-next-previous-padding-horizontal:   0;
-$pagination-next-previous-color: 				$base-link-color;
-$pagination-next-previous-background: 			none;
-$pagination-next-previous-hover-color: 			$base-link-hover-color;
-$pagination-next-previous-hover-background: 	none;
-$pagination-next-previous-onclick-color: 		$base-link-hover-color;
-$pagination-next-previous-onclick-background: 	none;
+$pagination-item-hover-color:                    $button-primary-color;
+$pagination-margin-horizontal:                   5px;
+$pagination-item-active-color:                   $button-primary-color;
+$pagination-active-background:                   $button-primary-active-background;
 
-$pagination-font-size:                          $button-font-size;
-$pagination-margin-left:                        10px;
-$pagination-padding-vertical:                   3px;
-$pagination-padding-horizontal:                 $button-padding-horizontal;
-$pagination-line-height:                        $button-height;
-$pagination-hover-background:                   $button-primary-background;
-$pagination-hover-color:                        $button-primary-color;
-$pagination-onclick-background:                 $button-primary-hover-background;
-$pagination-onclick-color:                      $button-primary-color;
-$pagination-active-background:                  $button-primary-active-background;
-$pagination-active-color:                       $button-primary-color;
-
-
-/* Pagination modifiers
- ========================================================================== */
-
+///* Pagination modifiers
+// ========================================================================== */
+//
 .uk-pagination {
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-@mixin hook-pagination-item() {
-	border-radius: $global-border-radius;
+
+.uk-pagination > li > a, .uk-pagination > li > span{
+    min-width: 12px;
+    padding: 3px 12px;
+    line-height: 30px;
+    text-decoration: none;
+    box-sizing: content-box;
+    text-align: center;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.uk-pagination > li :hover {
+    color: $button-primary-color;
+    background: $button-primary-hover-background;
+}
+
+.uk-pagination > *{
+    padding: 0px;
+}
+
+
+.uk-pagination > .uk-active > * {
+    background: $button-primary-active-background;
 }
