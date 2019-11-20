@@ -563,7 +563,7 @@ function beans_post_navigation() {
 		);
 
 		if ( $previous ) {
-			beans_open_markup_e( 'beans_post_navigation_item[_previous]', 'li', array( 'class' => 'uk-pagination-previous' ) );
+			beans_open_markup_e( 'beans_post_navigation_item[_previous]', 'li', array( 'class' => 'uk-margin-small-right' ) );
 
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Echoes HTML output.
 				echo get_previous_post_link(
@@ -575,12 +575,12 @@ function beans_post_navigation() {
 		}
 
 		if ( $next ) {
-			beans_open_markup_e( 'beans_post_navigation_item[_next]', 'li', array( 'class' => 'uk-pagination-next' ) );
+			beans_open_markup_e( 'beans_post_navigation_item[_next]', 'li', array( 'class' => 'uk-margin-auto-left' ) );
 
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Echoes HTML output.
 				echo get_next_post_link(
 					'%link',
-					beans_output( 'beans_next_text[_post_navigation_item]', __( 'Page', 'tm-beans' ) )
+					beans_output( 'beans_next_text[_post_navigation_item]', __( 'Next', 'tm-beans' ) )
 				);
 
 			beans_close_markup_e( 'beans_post_navigation_item[_next]', 'li' );
