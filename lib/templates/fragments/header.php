@@ -104,9 +104,18 @@ function beans_site_branding() {
 		'beans_site_branding',
 		'div',
 		array(
-			'class' => 'tm-site-branding uk-float-left' . ( ! get_bloginfo( 'description' ) ? ' uk-margin-small-top' : null ),
+			'class' => 'tm-site-branding uk-navbar-left' . ( ! get_bloginfo( 'description' ) ? ' uk-margin-small-top' : null ),
 		)
 	);
+
+    beans_open_markup_e(
+        'beans_site_branding_container',
+        'div',
+        array(
+
+        )
+    );
+
 
 		beans_open_markup_e(
 			'beans_site_title_link',
@@ -137,10 +146,11 @@ function beans_site_branding() {
 		// phpcs:enable Generic.WhiteSpace.ScopeIndent.IncorrectExact -- Code structure mimics HTML markup.
 		beans_close_markup_e( 'beans_site_title_link', 'a' );
 
+	beans_close_markup_e( 'beans_site_branding_container', 'div' );
 	beans_close_markup_e( 'beans_site_branding', 'div' );
 }
 
-beans_add_smart_action( 'beans_site_branding_append_markup', 'beans_site_title_tag' );
+beans_add_smart_action( 'beans_site_title_link_after_markup', 'beans_site_title_tag' );
 /**
  * Echo header site title tag.
  *

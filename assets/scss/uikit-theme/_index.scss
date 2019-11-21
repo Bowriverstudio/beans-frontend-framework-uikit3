@@ -43,8 +43,34 @@
   border-left-width: 1px;
 }
 
+.tm-header {
+  &.uk-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .tm-site-branding{
+    align-items:center;
+  }
+
+  .uk-navbar-dropdown{
+    padding:0px;
+  }
+
+  .uk-navbar-nav > li {
+    white-space: nowrap;
+  }
+  .uk-navbar-nav > li > a{
+    //align-items:normal;
+  }
+
+}
+
+
 
 .tm-footer.uk-section{
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+

@@ -39,7 +39,7 @@ beans_open_markup_e(
     'beans_navbar_container[_header]',
     'div',
     array(
-        'class' => ' uk-margin ',
+        'class' => 'uk-navbar uk-navbar-container uk-margin',
 //'uk-navbar' =>''
     ));
 

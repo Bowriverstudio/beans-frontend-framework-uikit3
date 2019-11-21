@@ -20,6 +20,14 @@ function beans_primary_menu() {
     $breakpoint = get_theme_mod('beans_primary_menu_breakpoint', beans_get_customizer_default_value('beans_primary_menu_breakpoint'));
 	$nav_visibility = current_theme_supports( 'offcanvas-menu' ) ? 'uk-visible@'.$breakpoint : '';
 
+    beans_open_markup_e(
+        'beans_primary_menu_wrapper',
+        'div',
+        array(
+            'class'      => 'uk-navbar-right',
+        )
+    );
+
 	beans_open_markup_e(
 		'beans_primary_menu',
 		'nav',
@@ -58,6 +66,7 @@ function beans_primary_menu() {
 		beans_output_e( 'beans_primary_menu', wp_nav_menu( $args ) );
 
 	beans_close_markup_e( 'beans_primary_menu', 'nav' );
+	beans_close_markup_e( 'beans_primary_menu_wrapper', 'div' );
 }
 
 beans_add_smart_action( 'beans_primary_menu_append_markup', 'beans_primary_menu_offcanvas_button', 5 );
