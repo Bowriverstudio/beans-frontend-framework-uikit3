@@ -1,0 +1,106 @@
+$color-dark-gray: #111;
+$color-light-gray: #767676;
+$color-white: #FFF;
+
+$text-muted-color:                               $global-muted-color !default;
+$text-emphasis-color:                            $global-emphasis-color !default;
+$text-primary-color:                             $global-primary-background !default;
+$text-secondary-color:                           $global-secondary-background !default;
+$text-success-color:                             $global-success-background !default;
+$text-warning-color:                             $global-warning-background !default;
+$text-danger-color:                              $global-danger-background !default;
+
+
+$global-muted-background:                        #f8f8f8 !default;
+$global-primary-background:                      #1e87f0 !default;
+$global-secondary-background:                    #222 !default;
+
+$global-success-background:                      #32d296 !default;
+$global-warning-background:                      #faa05a !default;
+$global-danger-background:                       #f0506e !default;
+
+
+//
+// Colors
+//
+
+$global-color:                                   #666 !default;
+$global-emphasis-color:                          #333 !default;
+$global-muted-color:                             #999 !default;
+
+$global-link-color:                              #1e87f0 !default;
+$global-link-hover-color:                        #0f6ecd !default;
+
+$global-inverse-color:                           #fff !default;
+
+// Gutenberg color options
+// -- see editor-color-palette in config/block-editor-settings.php
+$colors: (
+        'default' 		: $global-color,
+        'emphasis' 	    : $global-emphasis-color,
+        'muted' 	    : $global-muted-color,
+        'link' 		    : $global-link-color,
+        'primary' 		: $global-primary-background,
+        'secondary'     : $global-secondary-background,
+        'success' 		: $global-success-background,
+        'warning' 		: $global-warning-background,
+        'danger' 		: $global-danger-background,
+        'inverse' 		: $global-inverse-color,
+);
+
+
+@each $name, $color in $colors {
+
+  .has-#{$name}-color {
+    color: $color;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}
+
+
+
+//
+// Backgrounds
+//
+
+$global-background:                              #fff !default;
+
+$global-muted-background:                        #f8f8f8 !default;
+$global-primary-background:                      #1e87f0 !default;
+$global-secondary-background:                    #222 !default;
+
+$global-success-background:                      #32d296 !default;
+$global-warning-background:                      #faa05a !default;
+$global-danger-background:                       #f0506e !default;
+
+
+
+//
+//
+//// Color Pallet
+//.has-primary-background-color { background: @text-primary-color }
+//.has-primary-color { color: @text-primary-color }
+//
+//.has-muted-background-color { background: @text-muted-color }
+//.has-muted-color { color: @text-muted-color }
+//
+//.has-success-background-color { background: @text-success-color }
+//.has-success-color { color: @text-success-color }
+//
+//.has-warning-background-color { background: @text-warning-color }
+//.has-warning-color { color: @text-warning-color }
+//
+//.has-danger-background-color { background: @text-danger-color }
+//.has-danger-color { color: @text-danger-color }
+//
+//.has-dark-gray-background-color { background-color: @color-dark-gray; }
+//.has-dark-gray-color { color: @color-dark-gray; }
+//
+//.has-light-gray-background-color { background-color: @color-light-gray; }
+//.has-light-gray-color { color: @color-light-gray; }
+//
+//.has-white-background-color { background-color: @color-white; }
+//.has-white-color { color: @color-white; }

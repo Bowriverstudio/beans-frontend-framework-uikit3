@@ -20,3 +20,7 @@
 .tm-footer {
     border-top: 1px solid $global-border;
 }
+
+:focus {
+    outline: 0px;
+}

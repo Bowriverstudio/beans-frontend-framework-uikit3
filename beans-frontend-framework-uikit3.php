@@ -82,6 +82,7 @@ function define_constants() {
     define( 'BEANS_LESS_URL', BEANS_ASSETS_URL . 'less/' );
     define( 'BEANS_JS_URL', BEANS_ASSETS_URL . 'js/' );
     define( 'BEANS_IMAGE_URL', BEANS_ASSETS_URL . 'images/' );
+    define( 'BEANS_FRONTEND_FRAMEWORK_CONFIG_PATH' , plugin_dir_path(__FILE__) . 'config/');
 
 }
 

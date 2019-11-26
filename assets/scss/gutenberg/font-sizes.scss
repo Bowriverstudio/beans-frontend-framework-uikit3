@@ -1,0 +1,30 @@
+// Gutenberg font size.
+
+// Gutenberg font size options and the equivalent uikit.
+// -- see editor-color-palette in config/block-editor-settings.php
+$font_classes: (
+        'small' 		: '.uk-text-small',   // 0.875rem !default; 14px - uk-text-small
+        'large' 	: '.uk-text-large',       // 1.5rem !default;   // 24px
+);
+
+@each $name, $uikit in $font_classes {
+
+  .has-#{$name}-font-size {
+    @extend #{$uikit};
+  }
+}
+
+
+.has-regular-font-size {
+  font-size: $global-font-size;
+  line-height: $global-line-height
+}
+
+// UiKit Variables related and not included.
+//$global-xxlarge-font-size:                       2.625rem !default; // 42px
+//$global-xlarge-font-size:                        2rem !default;     // 32px
+//$global-large-font-size:                         1.5rem !default;   // 24px
+//$global-medium-font-size:                        1.25rem !default;  // 20px
+//$global-small-font-size:                         0.875rem !default; // 14px
+
+

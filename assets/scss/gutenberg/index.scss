@@ -7,7 +7,6 @@
     margin-left: calc( -1* #{$card-body-padding-horizontal-l});
     width: calc(100% + 2 * #{$card-body-padding-horizontal-l});
     max-width: calc(100% + 2 * #{$card-body-padding-horizontal-l});  }
-
 }
 
 //width:100vw;
@@ -37,8 +36,4 @@
 .wp-block-audio{
   width: 300px;
   height: 54px;
-}
-
-:focus {
-  outline: 0px;
 }
