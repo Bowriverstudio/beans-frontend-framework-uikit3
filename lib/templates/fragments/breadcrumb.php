@@ -7,21 +7,41 @@
  * @since   1.0.0
  */
 
+/**
+ * Are breadcrumbs hidden for the current page?
+ *
+ * Indicates that the “Hide breadcrumbs” checkbox is enabled and checked.
+ * Sidebar is considered source of truth.
+ *
+ * @since 2.0.0
+ *
+ * @return bool True if breadcrumbs are hidden, false otherwise.
+ */
+function beans_breadcrumbs_hidden_on_current_page() {
+    return apply_filters( 'beans_breadcrumbs_toggle_enabled', get_post_meta( get_queried_object_id(), '_beans_hide_breadcrumbs', true ) );
+}
+
 beans_add_smart_action( 'beans_main_grid_before_markup', 'beans_breadcrumb' );
 /**
  * Echo the breadcrumb.
  *
+ * @updated 2.0.0 Add support for sidebar.
  * @since 1.0.0
  *
  * @return void
  */
 function beans_breadcrumb() {
 
+    // Breadcrumbs not supported for home or front page.
 	if ( is_home() || is_front_page() ) {
 		return;
 	}
 
-	wp_reset_query(); // phpcs:ignore WordPress.WP.DiscouragedFunctions.wp_reset_query_wp_reset_query -- Ensure the main query has been reset to the original main query.
+	if( beans_breadcrumbs_hidden_on_current_page() ){
+	    return;
+    }
+
+    wp_reset_query(); // phpcs:ignore WordPress.WP.DiscouragedFunctions.wp_reset_query_wp_reset_query -- Ensure the main query has been reset to the original main query.
 
 	global $post;
 
