@@ -171,13 +171,7 @@ beans_add_smart_action( 'beans_post_body', 'beans_post_image', 5 );
  */
 function beans_post_image() {
 
-	if ( ! has_post_thumbnail() || ! current_theme_supports( 'post-thumbnails' ) ) {
-		return false;
-	}
-
-    // Indicates that the “Hide Featured Image” checkbox is enabled and checked in sidebar.
-    $_beans_hide_singular_image =  apply_filters( 'beans_hide_singular_image', get_post_meta( get_queried_object_id(), '_beans_hide_singular_image', true ) );
-    if( $_beans_hide_singular_image ){
+    if ( ! beans_display_featured_image() ){
         return false;
     }
 
