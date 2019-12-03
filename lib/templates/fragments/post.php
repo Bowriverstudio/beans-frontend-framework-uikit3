@@ -164,6 +164,7 @@ beans_add_smart_action( 'beans_post_body', 'beans_post_image', 5 );
 /**
  * Echo post image.
  *
+ * @udpated 2.0.0 - Add sidebar support.
  * @since 1.0.0
  *
  * @return bool
@@ -174,7 +175,13 @@ function beans_post_image() {
 		return false;
 	}
 
-	global $post;
+    // Indicates that the “Hide Featured Image” checkbox is enabled and checked in sidebar.
+    $_beans_hide_singular_image =  apply_filters( 'beans_hide_singular_image', get_post_meta( get_queried_object_id(), '_beans_hide_singular_image', true ) );
+    if( $_beans_hide_singular_image ){
+        return false;
+    }
+
+    global $post;
 
 	/**
 	 * Filter whether Beans should handle the image edition (resize) or let WP do so.

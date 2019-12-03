@@ -7,7 +7,7 @@
  * @since   1.0.0
  */
 
-beans_add_smart_action('customize_register', 'uikit3_beans_do_register_wp_customize_options');
+//beans_add_smart_action('customize_register', 'uikit3_beans_do_register_wp_customize_options');
 /**
  * Add Uikit 3 related options to the WordPress Customizer.
  *
