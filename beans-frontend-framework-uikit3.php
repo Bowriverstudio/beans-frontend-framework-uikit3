@@ -73,9 +73,9 @@ function define_constants() {
     // Used by the Beans Framework.
     define( 'BEANS_RENDER_PATH', plugin_dir_path(__FILE__) . 'lib/render/' );
     define( 'BEANS_TEMPLATES_PATH', plugin_dir_path(__FILE__) . 'lib/templates/' );
-
 //
     // Used Internally within this plugin
+    define( 'BEANS_CSSFRAMEWORK_ADMIN_PATH', plugin_dir_path(__FILE__) . 'lib/admin/' );
     define( 'BEANS_CSSFRAMEWORK_PATH', plugin_dir_path(__FILE__) . 'lib/api/uikit/' );
 
     define( 'BEANS_ASSETS_URL', BEANS_FRONTEND_FRAMEWORK_BASE_URL . 'assets/' );
@@ -83,7 +83,6 @@ function define_constants() {
     define( 'BEANS_JS_URL', BEANS_ASSETS_URL . 'js/' );
     define( 'BEANS_IMAGE_URL', BEANS_ASSETS_URL . 'images/' );
     define( 'BEANS_FRONTEND_FRAMEWORK_CONFIG_PATH' , plugin_dir_path(__FILE__) . 'config/');
-
 }
 
 
@@ -129,13 +128,31 @@ add_action('beans_after_load_api', __NAMESPACE__.'\add_custom_css_framework');
 function add_custom_css_framework(){
     if (is_admin() ){
         require_once plugin_dir_path(__FILE__).'lib/admin/menu-uikit3.php';
+//        require_once plugin_dir_path(__FILE__).'lib/admin/editor/sidebar/functions.php';
     }
     require_once plugin_dir_path(__FILE__).'lib/api/layout/functions.php';
     require_once plugin_dir_path(__FILE__).'lib/api/header-layout/functions.php';
+//    require_once plugin_dir_path(__FILE__).'lib/api/rest/functions.php';
     require_once plugin_dir_path(__FILE__).'lib/api/utilities/functions.php';
 //    require_once plugin_dir_path(__FILE__).'lib/api/uikit/class-beans-uikit.php';
 //    require_once plugin_dir_path(__FILE__).'lib/api/uikit/functions.php';
 
+}
+add_filter('beans_get_container_options', __NAMESPACE__ .'\beans_get_container_options');
+/**
+ * List of containers that header or body can use.
+ *
+ * Since Beans 2.0.0
+ * @return array
+ */
+function beans_get_container_options(){
+    return array(
+        '' => ['label' => __('Default', 'tm-beans')],
+        'uk-container-xsmall' => ['label' => __('xsmall container', 'tm-beans')],
+        'uk-container-small' => ['label' => __('small container.', 'tm-beans')],
+        'uk-container-large' => ['label' => __('large container', 'tm-beans')],
+        'uk-container-expand' => ['label' => __('Unlimited with dynamic horizontal padding', 'tm-beans')],
+    );
 }
 
 

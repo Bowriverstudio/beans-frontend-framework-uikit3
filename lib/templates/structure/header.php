@@ -45,9 +45,7 @@ beans_open_markup_e( 'beans_html', 'html', str_replace( ' ', '&', str_replace( '
 
 			beans_open_markup_e( 'beans_main', 'main', array( 'class' => 'tm-main uk-section' ) );
 
-
-			    $beans_fixed_wrap_main_max_width = apply_filters( "beans_fixed_wrap_main_max_width", get_theme_mod('beans_fixed_wrap_main_max_width', beans_get_customizer_default_value('beans_fixed_wrap_main_max_width') ));
-                beans_open_markup_e( 'beans_fixed_wrap[_main]', 'div', 'class=uk-container '. $beans_fixed_wrap_main_max_width );
+                beans_open_markup_e( 'beans_fixed_wrap[_main]', 'div', 'class=uk-container');
 
 					beans_open_markup_e(
 						'beans_main_grid',
